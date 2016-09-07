@@ -2,3 +2,19 @@
     ViewData["Title"] = "HOME PAGE";
 }
 <h1>Welcome to VPS Monitor</h1>
+<div class="container">
+    <div class="col-md-4">
+    <div class="panel panel-info">
+          <div class="panel-heading">Disk Infos</div>
+  <div class="panel-body">
+      <ul class="list-group">  
+     @foreach(var drive in (string[])ViewData["Drives"])
+    {
+        <li class="list-group-item">@drive</li>
+    }
+    </ul>
+  </div>
+  </div>
+ 
+    </div>
+</div>

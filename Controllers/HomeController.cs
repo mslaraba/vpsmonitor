@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
+using System.Linq;
 
 namespace WebApplication.Controllers
 {
@@ -6,6 +8,9 @@ namespace WebApplication.Controllers
     {
         public IActionResult Index()
         {
+          
+
+             ViewData["Drives"]=DriveInfo.GetDrives().Where(X=>X.IsReady).Select(X=>X.Name+" :: "+X.TotalFreeSpace).ToArray();
             return View();
         }
  
